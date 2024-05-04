@@ -20,15 +20,52 @@ var questions = [
     },
     {
         question: "Who wrote 'Romeo and Juli&shy;et'?",
-        correctAnswer: "William Shakespeare",
-        wrongAnswer: "Jane Austen"
+        correctAnswer: "William Shake&shy;speare",
+        wrongAnswer: "Jane Aus&shy;ten"
     },
     {
-        question: "What is the chemical sym&shy;bol for water?",
+        question: "What is the chem&shy;ical sym&shy;bol for water?",
         correctAnswer: "H2O",
         wrongAnswer: "CO2"
+    },
+    {
+        question: "Which planet is known as the Red Planet?",
+        correctAnswer: "Mars",
+        wrongAnswer: "Venus"
+    },
+    {
+        question: "Who discov&shy;ered the theory of rela&shy;tiv&shy;ity?",
+        correctAnswer: "Albert Ein&shy;stein",
+        wrongAnswer: "Isaac New&shy;ton"
+    },
+    {
+        question: "What is the largest ocean on Earth?",
+        correctAnswer: "Paci&shy;fic Ocean",
+        wrongAnswer: "Atlan&shy;tic Ocean"
+    },
+    {
+        question: "Who painted the Mona Lisa?",
+        correctAnswer: "Leo&shy;nardo da Vin&shy;ci",
+        wrongAnswer: "Vincent van Gogh"
+    },
+    {
+        question: "What is the capi&shy;tal of Japan?",
+        correctAnswer: "Tokyo",
+        wrongAnswer: "Kyoto"
+    },
+    {
+        question: "Who was the first man to walk on the moon?",
+        correctAnswer: "Neil Arm&shy;strong",
+        wrongAnswer: "Buzz Aldrin"
+    },
+    {
+        question: "What is the cur&shy;ren&shy;cy of Ger&shy;many?",
+        correctAnswer: "Euro",
+        wrongAnswer: "Deut&shy;sche Mark"
     }
 ];
+
+
 var index = -1;
 var correct;
 var howmuch = 0;
@@ -46,21 +83,21 @@ function NewQuestion() {
     button1.style.backgroundColor = "#767d7b";
     button2.style.backgroundColor = "#767d7b";
 
-    question.textContent = questions[index].question;
+    question.innerHTML = questions[index].question;
 
     checked = false;
 
     if (Math.random() < 0.5)
     {
-        button1.textContent = questions[index].correctAnswer;
-        button2.textContent = questions[index].wrongAnswer;
+        button1.innerHTML = questions[index].correctAnswer;
+        button2.innerHTML = questions[index].wrongAnswer;
         correct = 1;
 
     }
     else 
     {
-        button2.textContent = questions[index].correctAnswer;
-        button1.textContent = questions[index].wrongAnswer;
+        button2.innerHTML = questions[index].correctAnswer;
+        button1.innerHTML = questions[index].wrongAnswer;
         correct = 2;
     }
 }
@@ -74,11 +111,11 @@ function CheckAnswer(button)
         if (button === correct)
         {
             pic.src = "images/true.png";
-            answer.textContent = "Richtig!";
+            answer.innerHTML = "Rich&shy;tig!";
             howmuch++;
         } else {
             pic.src  = "images/false.png";
-            answer.textContent = "Falsch, es wäre " + questions[index].correctAnswer;
+            answer.innerHTML = "Falsch, es wäre " + questions[index].correctAnswer;
         }
         if (correct === 1)
         {
