@@ -126,10 +126,12 @@ function CheckAnswer(button) {
         answer.textContent =
           "Du hast " +
           howmuch +
+          " von " +
+          questions.length +
           " richig, also ein Anteil von " +
           Math.round((howmuch / questions.length) * 100) +
           "%";
       }
-    }, 3000);
+    }, 2000);
   }
 }
